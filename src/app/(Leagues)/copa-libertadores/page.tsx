@@ -7,7 +7,7 @@ const CopaLibertadores = async () => {
   return (
      <div className="w-[600px]">
      {getCopaLibertadores.length ? (
-       getCopaLibertadores.map((data) => (
+       getCopaLibertadores.map((data: any) => (
          <div key={data.id}>
            <LeagueTable data={data} />
          </div>

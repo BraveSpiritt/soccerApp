@@ -7,7 +7,7 @@ const Championship = async () => {
   return (
     <div className="w-[600px]">
     {getChampionship.length ? (
-      getChampionship.map((data) => (
+      getChampionship.map((data: any) => (
         <div key={data.id}>
           <LeagueTable data={data} />
         </div>

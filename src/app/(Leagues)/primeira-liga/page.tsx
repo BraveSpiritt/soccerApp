@@ -7,7 +7,7 @@ const PremiereLiga = async () => {
   return (
     <div className="w-[600px]">
     {getPremiereLiga.length ? (
-      getPremiereLiga.map((data) => (
+      getPremiereLiga.map((data: any) => (
         <div key={data.id}>
           <LeagueTable data={data} />
         </div>

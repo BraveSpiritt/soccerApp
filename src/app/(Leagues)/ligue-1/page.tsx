@@ -7,7 +7,7 @@ const LigueFrance = async () => {
   return (
       <div className="w-[600px]">
       {getLigueFrance.length ? (
-        getLigueFrance.map((data) => (
+        getLigueFrance.map((data: any) => (
           <div key={data.id}>
             <LeagueTable data={data} />
           </div>

@@ -7,7 +7,7 @@ const Bundesliga = async () => {
   return (
      <div className="w-[600px]">
      {getBundesliga.length ? (
-       getBundesliga.map((data) => (
+       getBundesliga.map((data: any) => (
          <div key={data.id}>
            <LeagueTable data={data} />
          </div>
