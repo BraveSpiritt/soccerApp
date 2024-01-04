@@ -1,4 +1,68 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
-
+const nextConfig = {
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'crests.football-data.org',
+                port: '',
+                pathname: '/*',
+            },
+            {
+                protocol: 'https',
+                hostname: 'upload.wikimedia.org',
+                port: '',
+                pathname: '/*/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'media.wired.com',
+                port: '',
+                pathname: '/*/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 's.yimg.com',
+                port: '',
+                pathname: '/*/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'venturebeat.com',
+                port: '',
+                pathname: '/*/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'www.cnet.com',
+                port: '',
+                pathname: '/*/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'a4.espncdn.com',
+                port: '',
+                pathname: '/*/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'api.time.com',
+                port: '',
+                pathname: '/*/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'i.abcnewsfe.com',
+                port: '',
+                pathname: '/*/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'media.npr.org',
+                port: '',
+                pathname: '/*/**',
+            },
+        ],
+    },
+}
 module.exports = nextConfig
