@@ -6,7 +6,7 @@ const Bundesliga = async () => {
   const getBundesliga = await filterLeague("Bundesliga");
   return (
      <div className="w-[600px]">
-     {getBundesliga.length ? (
+     {getBundesliga ? (
        getBundesliga.map((data: any) => (
          <div key={data.id}>
            <LeagueTable data={data} />

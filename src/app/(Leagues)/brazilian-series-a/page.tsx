@@ -8,7 +8,7 @@ const BrasileroSerieA = async () => {
   );
   return (
     <div className="w-[600px]">
-      {getBrasileroSerieA && getBrasileroSerieA.length ? (
+      {getBrasileroSerieA ? (
         getBrasileroSerieA.map((data: any) => (
           <div key={data.id}>
             <LeagueTable data={data} />

@@ -6,7 +6,7 @@ const LigueFrance = async () => {
   const getLigueFrance = await filterLeague("Ligue 1");
   return (
       <div className="w-[600px]">
-      {getLigueFrance.length ? (
+      {getLigueFrance ? (
         getLigueFrance.map((data: any) => (
           <div key={data.id}>
             <LeagueTable data={data} />

@@ -6,7 +6,7 @@ const CopaLibertadores = async () => {
   const getCopaLibertadores = await filterLeague("Copa Libertadores");
   return (
      <div className="w-[600px]">
-     {getCopaLibertadores.length ? (
+     {getCopaLibertadores ? (
        getCopaLibertadores.map((data: any) => (
          <div key={data.id}>
            <LeagueTable data={data} />
