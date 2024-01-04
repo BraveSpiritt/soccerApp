@@ -43,8 +43,8 @@ export const getNewsInfo = async () => {
 
 export const filterLeague = async (filterData: string) => {
   const getLeague = await getMatchesFootball();
-  const filterLeague: matchesType[] = getLeague.matches;
-  const getData = filterLeague.filter(
+  const filterLeague: matchesType[] = getLeague?.matches;
+  const getData = filterLeague.length && filterLeague.filter(
     (item) => item.competition.name === filterData
   );
   return null ?? getData;
