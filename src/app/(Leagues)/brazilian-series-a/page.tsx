@@ -8,14 +8,11 @@ const BrasileroSerieA = async () => {
   );
   return (
     <div className="w-[600px]">
-      {getBrasileroSerieA ? (
-        getBrasileroSerieA &&
-        getBrasileroSerieA.map((data: any) => (
-          <div key={data.id}>
-            <LeagueTable data={data} />
-          </div>
-        ))
-      ) : (
+      {getBrasileroSerieA.map((data: any) => (
+        <div key={data.id}>
+          <LeagueTable data={data} />
+        </div>
+      )) ?? (
         <p className="text-center mt-2 text-slate-400">No matches available</p>
       )}
     </div>

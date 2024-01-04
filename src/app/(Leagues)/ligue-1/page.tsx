@@ -6,17 +6,14 @@ const LigueFrance = async () => {
   const getLigueFrance = await filterLeague("Ligue 1");
   return (
     <div className="w-[600px]">
-      {getLigueFrance ? (
-        getLigueFrance &&
-        getLigueFrance.map((data: any) => (
-          <div key={data.id}>
-            <LeagueTable data={data} />
-          </div>
-        ))
-      ) : (
-        <p className="text-center mt-2 text-slate-400">No matches available</p>
-      )}
-    </div>
+    {getLigueFrance.map((data: any) => (
+      <div key={data.id}>
+        <LeagueTable data={data} />
+      </div>
+    )) ?? (
+      <p className="text-center mt-2 text-slate-400">No matches available</p>
+    )}
+  </div>
   );
 };
 

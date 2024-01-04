@@ -6,14 +6,11 @@ const CopaLibertadores = async () => {
   const getCopaLibertadores = await filterLeague("Copa Libertadores");
   return (
     <div className="w-[600px]">
-      {getCopaLibertadores ? (
-        getCopaLibertadores &&
-        getCopaLibertadores.map((data: any) => (
-          <div key={data.id}>
-            <LeagueTable data={data} />
-          </div>
-        ))
-      ) : (
+      {getCopaLibertadores.map((data: any) => (
+        <div key={data.id}>
+          <LeagueTable data={data} />
+        </div>
+      )) ?? (
         <p className="text-center mt-2 text-slate-400">No matches available</p>
       )}
     </div>
