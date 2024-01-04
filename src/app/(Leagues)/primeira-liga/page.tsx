@@ -6,14 +6,16 @@ const PremiereLiga = async () => {
   const getPremiereLiga = await filterLeague("Primeira Liga");
   return (
     <div className="w-[600px]">
-    {getPremiereLiga.map((data: any) => (
-      <div key={data.id}>
-        <LeagueTable data={data} />
-      </div>
-    )) ?? (
-      <p className="text-center mt-2 text-slate-400">No matches available</p>
-    )}
-  </div>
+      {getPremiereLiga && getPremiereLiga.length > 0 ? (
+        getPremiereLiga.map((data: any) => (
+          <div key={data.id}>
+            <LeagueTable data={data} />
+          </div>
+        ))
+      ) : (
+        <p className="text-center mt-2 text-slate-400">No matches available</p>
+      )}
+    </div>
   );
 };
 

@@ -7,11 +7,13 @@ const LaLiga = async () => {
 
   return (
     <div className="w-[600px]">
-      {getLaLiga.map((data: any) => (
-        <div key={data.id}>
-          <LeagueTable data={data} />
-        </div>
-      )) ?? (
+      {getLaLiga && getLaLiga.length > 0 ? (
+        getLaLiga.map((data: any) => (
+          <div key={data.id}>
+            <LeagueTable data={data} />
+          </div>
+        ))
+      ) : (
         <p className="text-center mt-2 text-slate-400">No matches available</p>
       )}
     </div>
