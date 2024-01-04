@@ -1,9 +1,8 @@
-import React from 'react';
 
 const Loader = () => {
-    return <div className='w-[600px]'>Loading...</div>;
+  return (
+    <div className='w-[600px]'>Loading...</div>
+  )
 }
 
-
-
-export default Loader;
+export default Loader

@@ -1,22 +1,17 @@
-import { filterLeague } from "@/api";
-import LeagueTable from "@/app/components/LeagueTable";
-import React from "react";
+import { filterLeague } from '@/api'
+import LeagueTable from '@/components/LeagueTable'
 
 const Championship = async () => {
-  const getChampionship = await filterLeague("Championship");
+  const getChampionship = await filterLeague('Championship')
   return (
-    <div className="w-[600px]">
-      {getChampionship && getChampionship.length > 0 ? (
-        getChampionship.map((data: any) => (
-          <div key={data.id}>
-            <LeagueTable data={data} />
-          </div>
-        ))
-      ) : (
-        <p className="text-center mt-2 text-slate-400">No matches available</p>
-      )}
+    <div className='w-[600px]'>
+      {getChampionship.map((data) => (
+        <div key={data.id}>
+          <LeagueTable data={data} />
+        </div>
+      ))}
     </div>
-  );
-};
+  )
+}
 
-export default Championship;
+export default Championship

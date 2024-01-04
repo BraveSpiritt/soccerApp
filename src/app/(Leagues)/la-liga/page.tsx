@@ -1,23 +1,19 @@
-import { filterLeague } from "@/api";
-import LeagueTable from "@/app/components/LeagueTable";
-import React from "react";
+import { filterLeague } from "@/api"
+import LeagueTable from "@/components/LeagueTable"
+
 
 const LaLiga = async () => {
-  const getLaLiga = await filterLeague("Primera Division");
+  const getLaLiga = await filterLeague('Primera Division')
 
   return (
-    <div className="w-[600px]">
-      {getLaLiga && getLaLiga.length > 0 ? (
-        getLaLiga.map((data: any) => (
-          <div key={data.id}>
-            <LeagueTable data={data} />
-          </div>
-        ))
-      ) : (
-        <p className="text-center mt-2 text-slate-400">No matches available</p>
-      )}
+    <div className='w-[600px]'>
+      {getLaLiga.map((data) => (
+        <div key={data.id}>
+          <LeagueTable data={data} />
+        </div>
+      ))}
     </div>
-  );
-};
+  )
+}
 
-export default LaLiga;
+export default LaLiga
