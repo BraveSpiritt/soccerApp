@@ -48,14 +48,14 @@ const Status = ({
               </div>
             ))
           : null}
-        {statusMatch === "TODAY"
+        {/* {statusMatch === "TODAY"
           ? matchesListFinished && matchesListFinished.map((data) => (
               <div key={data.id}>
                 {" "}
                 <LeagueTable data={data} />{" "}
               </div>
             ))
-          : null}
+          : null} */}
       </div>
     </div>
   );
