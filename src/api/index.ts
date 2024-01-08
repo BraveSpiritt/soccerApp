@@ -8,7 +8,7 @@ const options:apiOptions =  {
   },
 }
 export const getMatchesfootball = async () => {
-  const matchData = await fetch('https://api.football-data.org/v4/matches',options)
+  const matchData = await fetch('https://api.football-data.org/v4/matches', options)
   return matchData.json()
 }
 
