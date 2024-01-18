@@ -22,8 +22,8 @@ export const getMatchesfootball = async (options: apiOptions): Promise<any> => {
   const getData = await fetch(
     "https://api.football-data.org/v4/matches",
     options
-  );
-  return getData.json();
+  ).then((data) => data.json());
+  return getData;
 };
 
 export const getMatchesfootballFinished = async () => {
