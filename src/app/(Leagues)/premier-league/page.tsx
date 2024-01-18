@@ -1,5 +1,3 @@
-'use client'
-
 import { filterLeague} from "@/api"
 import LeagueTable from "@/components/LeagueTable"
 
@@ -8,7 +6,7 @@ const English = async () => {
 
   return (
     <div className='w-[600px]'>
-      {getEnglishLeague.map((data) => (
+      {getEnglishLeague && getEnglishLeague.map((data) => (
         <div key={data.id}>
           <LeagueTable data={data} />
         </div>
