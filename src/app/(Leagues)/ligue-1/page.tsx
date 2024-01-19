@@ -1,18 +1,21 @@
-import { filterLeague } from "@/api"
-import LeagueTable from "@/components/LeagueTable"
-
+import { filterLeague } from "@/api";
+import LeagueTable from "@/components/LeagueTable";
 
 const Ligue1 = async () => {
-  const getLigue1 = await filterLeague('Ligue 1')
+  const getLigue1 = await filterLeague("Ligue 1");
   return (
-    <div className='w-[600px]'>
-      {getLigue1 && getLigue1.map((data) => (
-        <div key={data.id}>
-          <LeagueTable data={data} />
-        </div>
-      ))}
+    <div className="w-[600px]">
+      {getLigue1.length ? (
+        getLigue1.map((data) => (
+          <div key={data.id}>
+            <LeagueTable data={data} />
+          </div>
+        ))
+      ) : (
+        <div>No matches found</div>
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default Ligue1
+export default Ligue1;
