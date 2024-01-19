@@ -11,7 +11,7 @@ const Navbar:FC = () => {
         </div>
         <span className='text-2xl font-bold none md:block'>Football info</span>
       </Link>
-      <p className='text-xs md:text-sm'>create by Sadik Badik LLC</p>
+      <p className='text-xs md:text-sm'>cooked-up by Sadik Badik LLC</p>
     </div>
   )
 }
