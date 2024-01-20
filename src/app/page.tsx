@@ -17,7 +17,7 @@ export default async function Home() {
   const matchesDatasFinished = getDatasFinished?.matches;
 
   const nd = new Date();
-  const dateConvert = nd.toDateString();
+  const dateConvert = nd.toLocaleString("en-GB", {timeZone: "Asia/Yerevan"});
 
   return (
     <section className="px-2 md:px-4 md:w-[600px]">

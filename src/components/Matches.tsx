@@ -5,6 +5,7 @@ const Matches = ({ data }: { data: matchesType }) => {
   const getDate = new Date(data?.utcDate).toLocaleTimeString("en-US", {
     hourCycle: "h23",
     timeStyle: 'short', 
+    timeZone: 'Asia/Yerevan',
   });
 
   return (
