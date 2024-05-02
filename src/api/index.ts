@@ -1,12 +1,13 @@
 import { apiOptions, matchesType } from "@/types";
 
 const options: apiOptions = {
-  next: { revalidate: 30 },
+  next: { revalidate: 30, cache: 'no-store' },
 
   headers: {
     "X-Auth-Token": "2d5ffdb62c8f459dacb199233105dfb5",
     "Content-Type": "application/json",
   },
+  
 };
 
 const todayDate = new Date();
