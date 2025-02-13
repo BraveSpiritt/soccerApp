@@ -1,14 +1,4 @@
-import { apiOptions, matchesType } from "@/types";
-
-const options: apiOptions = {
-  next: { revalidate: 30, cache: 'no-store' },
-
-  headers: {
-    "X-Auth-Token": "2d5ffdb62c8f459dacb199233105dfb5",
-    "Content-Type": "application/json",
-  },
-  
-};
+import { matchesType } from "@/types";
 
 const todayDate = new Date();
 const getDateMonth = new Date(todayDate.getTime());
@@ -19,18 +9,30 @@ const day = String(getDateMonth.getDate()).padStart(2, "0");
 
 const yesterday = [year, month, day].join("-");
 
-export const getMatchesfootball = async (options: apiOptions): Promise<any> => {
-  const getData = await fetch(
-    "https://api.football-data.org/v4/matches",
-    options
-  ).then((data) => data.json());
+export const getMatchesfootball = async (): Promise<any> => {
+  const getData = await fetch("https://api.football-data.org/v4/matches", {
+    method: "GET",
+    cache: "no-store", 
+    headers: {
+      "X-Auth-Token": "2d5ffdb62c8f459dacb199233105dfb5",
+      "Content-Type": "application/json",
+    },
+  }).then((data) => data.json());
+
   return getData;
 };
 
 export const getMatchesfootballFinished = async () => {
   const matchData = await fetch(
     `https://api.football-data.org/v4/matches?date=${yesterday}`,
-    options
+    {
+      method: "GET",
+      cache: "no-store", 
+      headers: {
+        "X-Auth-Token": "2d5ffdb62c8f459dacb199233105dfb5",
+        "Content-Type": "application/json",
+      },
+    }
   );
 
   return matchData.json();
@@ -45,7 +47,7 @@ export const getNewsInfo = async () => {
 };
 
 export const filterLeague = async (filterData: string) => {
-  const getEnglishLeague = await getMatchesfootball(options);
+  const getEnglishLeague = await getMatchesfootball();
   const filterPremierLeague: matchesType[] = getEnglishLeague?.matches;
   const getData =
     filterPremierLeague &&

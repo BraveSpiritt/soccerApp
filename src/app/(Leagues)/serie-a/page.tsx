@@ -5,7 +5,7 @@ const SerieA = async () => {
   const getSerieA = await filterLeague("Serie A");
   return (
     <div className="w-[600px]">
-      {getSerieA.length ? (
+      {getSerieA?.length ? (
         getSerieA.map((data) => (
           <div key={data.id}>
             <LeagueTable data={data} />
