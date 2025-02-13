@@ -1,23 +1,15 @@
 import { getMatchesfootball, getMatchesfootballFinished } from "@/api";
 import Status from "@/components/Status";
-import { apiOptions } from "@/types";
 
 export default async function Home() {
-  const options: apiOptions = {
-    next: { revalidate: 30 },
-    headers: {
-      "X-Auth-Token": '2d5ffdb62c8f459dacb199233105dfb5',
-      "Content-Type": "application/json",
-    },
-  };
-  const getDatas = await getMatchesfootball(options);
+  const getDatas = await getMatchesfootball();
   const getDatasFinished = await getMatchesfootballFinished();
 
   const matchesDatas = getDatas?.matches;
   const matchesDatasFinished = getDatasFinished?.matches;
 
   const nd = new Date();
-  const dateConvert = nd.toLocaleString("en-AM", {dateStyle: 'medium'});
+  const dateConvert = nd.toLocaleString("en-AM", { dateStyle: "medium" });
 
   return (
     <section className="px-2 md:px-4 md:w-[600px]">
